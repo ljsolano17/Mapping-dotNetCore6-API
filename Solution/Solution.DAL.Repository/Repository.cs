@@ -80,10 +80,11 @@ namespace Solution.DAL.Repository
 
         public void Update(T t)
         {
-            if (dbContext.Entry<T>(t).State == Microsoft.EntityFrameworkCore.EntityState.Detached)
+           /* if (dbContext.Entry<T>(t).State == Microsoft.EntityFrameworkCore.EntityState.Detached)
             {
                 dbContext.Set<T>().Attach(t);       
-            }
+            }*/
+           
 
             dbContext.Entry<T>(t).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             

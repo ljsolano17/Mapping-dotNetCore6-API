@@ -68,7 +68,14 @@ namespace Solution.API.Controllers
             try
             {
                 var mapaux = _mapper.Map<datamodels.Focus, data.Focus>(focus);
-                new Solution.BS.Focus(_context).Update(mapaux);
+
+               // var existingGroup = new Solution.BS.Focus(_context).GetOneByIdWithAsync(id);
+               if(mapaux != null)
+                {
+                    new Solution.BS.Focus(_context).Update(mapaux);
+                }
+                
+                
             }
             catch (Exception ee)
             {
